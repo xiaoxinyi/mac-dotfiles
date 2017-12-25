@@ -1,0 +1,24 @@
+[user]
+	name = Zhang Li
+	email = xiaoxin88214@163.com
+[core]
+	editor = 'subl' -w
+	excludesFile = /Users/zhangli/.gitignore
+	quotepath = false
+[push]
+	default = simple
+[alias]
+	co = commit
+	re = remote
+	st = status
+	br = branch
+	ch = checkout
+  ls = log --oneline
+  caa = commit -a --amend -C HEAD
+	stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0 ] && git stash pop stash@{1}; }; _"
+  gam = "git ls-files --modified | xargs git add"
+[rerere]
+	enabled = true
+[credential]
+	helper = store
+

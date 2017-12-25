@@ -1,0 +1,10 @@
+*
+.DS_Store
+thumbs.db
+*~
+
+!.gitconfig
+!.gitignore
+!.percol.d/rc.py
+!.tmux.conf
+!.zshrc
