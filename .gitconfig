@@ -3,7 +3,7 @@
 	email = xiaoxin88214@163.com
 [core]
 	editor = 'subl' -w
-	excludesFile = /Users/zhangli/.gitignore
+	excludesfile = /Users/zhangli/.gitignore_global
 	quotepath = false
 [push]
 	default = simple

@@ -24,7 +24,7 @@ export UPDATE_ZSH_DAYS=13
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -49,7 +49,7 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx sublime common-aliases themes tmux zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git autojump osx sublime common-aliases themes tmux zsh-syntax-highlighting zsh-autosuggestionsplugin z d)
 
 # User configuration
 
@@ -205,4 +205,8 @@ alias unloadpp="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.polipo.pli
 alias startkcp="/Users/zhangli/go/bin/client -r 47.52.111.105:6500 -l :6500 -mode fast2"
 alias sslocal="ss-local -s 127.0.0.1 -p 6500 -b 0.0.0.0 -l 1080 -m aes-256-cfb -k test123 --fast-open"
 
-#
+# Prezto
+# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+# trash-cli
+alias rt="trash"
