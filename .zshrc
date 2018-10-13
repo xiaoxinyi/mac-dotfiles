@@ -49,7 +49,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx sublime common-aliases themes tmux zsh-syntax-highlighting zsh-autosuggestionsplugin z d)
+plugins=(git autojump osx sublime common-aliases themes tmux zsh-syntax-highlighting zsh-autosuggestions z d)
 
 # User configuration
 
@@ -122,9 +122,10 @@ export VIEWER=subl
 #export GOROOT=/usr/local/Cellar/go/1.5.1
 #export PATH=$PATH:$GOROOT/bin
 #export GOPATH=~/code/go
+export PATH=/Users/zhangli/go/bin/:$PATH
 
 # virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 
 # added by Anaconda3 4.0.0 installer
@@ -158,7 +159,7 @@ if exists percol; then
     }
 
     zle -N percol_select_history
-    bindkey '^R' percol_select_history
+    bindkey '^G' percol_select_history
 fi
 
 function ppgrep() {
@@ -178,6 +179,10 @@ function ppkill() {
         [[ $# > 0 ]] && shift
     fi
     ppgrep $QUERY | xargs kill $*
+}
+
+function ccol() {
+    tr -s " " | cut -d ' ' -f $1
 }
 
 # ccache
@@ -200,7 +205,7 @@ alias proxy="http_proxy=http://0.0.0.0:8123 https_proxy=http://0.0.0.0:8123"
 alias proxy208="http_proxy=http://192.168.199.208:8123 https_proxy=http://192.168.199.208:8123"
 alias proxyhk="http_proxy=http://47.52.111.105:8123 https_proxy=http://47.52.111.105:8123"
 
-alias loadpp="launchctl load ~/Library/LaunchAgents/homebrew.mxcl.polipo.plist"
+
 alias unloadpp="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.polipo.plist"
 alias startkcp="/Users/zhangli/go/bin/client -r 47.52.111.105:6500 -l :6500 -mode fast2"
 alias sslocal="ss-local -s 127.0.0.1 -p 6500 -b 0.0.0.0 -l 1080 -m aes-256-cfb -k test123 --fast-open"
